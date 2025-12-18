@@ -1,56 +1,65 @@
 import { SITE_CONFIG } from "@/lib/constants";
-import { educationData, achievementsData } from "@/data/achievements";
+import { educationData } from "@/data/achievements";
 import { experienceData } from "@/data/experience";
 
 export function JsonLd() {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    name: "Sachintha Waduge",
-    alternateName: "Sachin",
-    url: SITE_CONFIG.url,
-    email: SITE_CONFIG.links.email,
-    telephone: SITE_CONFIG.links.phone,
-    jobTitle: "Software engineer",
-    description: SITE_CONFIG.description,
-    sameAs: [
-      SITE_CONFIG.links.github,
-      SITE_CONFIG.links.linkedin,
-    ],
-    alumniOf: educationData.map(edu => ({
+  const url = SITE_CONFIG.url;
+
+  const alumniOf = educationData.map((edu) => {
+    const parts = (edu.location || "").split(",").map((p) => p.trim());
+    const locality = parts[0] || "";
+    const country = parts[parts.length - 1] || "";
+
+    return {
       "@type": "EducationalOrganization",
       name: edu.institution,
       address: {
         "@type": "PostalAddress",
-        addressLocality: edu.location.split(", ")[0],
-        addressCountry: edu.location.split(", ")[1],
+        addressLocality: locality || undefined,
+        addressCountry: country || undefined,
       },
-    })),
-    worksFor: experienceData.map(exp => ({
-      "@type": "Organization",
-      name: exp.company,
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: exp.location,
-      },
-    })),
+    };
+  });
+
+  // pick latest/current job only (first item), or leave undefined
+  const currentWork = experienceData?.[0]
+    ? {
+        "@type": "Organization",
+        name: experienceData[0].company,
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: experienceData[0].location || undefined,
+        },
+      }
+    : undefined;
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${url}#person`,
+    name: "Sachintha Waduge",
+    alternateName: "Sachin",
+    url,
+    mainEntityOfPage: url,
+    email: SITE_CONFIG.links.email,
+    telephone: SITE_CONFIG.links.phone,
+    jobTitle: "Software Engineer",
+    description: SITE_CONFIG.description,
+    image: `${url}/images/profile/sachintha.jpg`, // make sure this path exists in /public
+    sameAs: [SITE_CONFIG.links.github, SITE_CONFIG.links.linkedin].filter(Boolean),
+    alumniOf,
+    worksFor: currentWork,
     knowsAbout: [
-      "Cloud Computing",
       "Full Stack Development",
-      "Machine Learning",
-      "Blockchain",
-      "AWS",
-      "Azure",
+      "Backend Development",
+      "SQL",
+      "MongoDB",
+      "Spring Boot",
+      "Next.js",
       "React",
       "Node.js",
-      "Python",
       "TypeScript",
     ],
-    memberOf: achievementsData.map(achievement => ({
-      "@type": "Organization",
-      name: achievement.organization,
-      description: achievement.description,
-    })),
   };
 
   return (

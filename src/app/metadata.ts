@@ -10,7 +10,7 @@ export const generateMetadata = (): Metadata => {
     },
     description: SITE_CONFIG.description,
     keywords: [
-      "Manan Narwal",
+      "Sachintha Waduge",
       "Portfolio",
       "Full Stack Developer",
       "Cloud Computing",
