@@ -16,29 +16,29 @@ export const projects: Project[] = [
   {
     id: "nestwell",
     title: "Nestwell",
-    description: "Property and accommodation platform with listings, search, and booking-style flows.",
+    description: "Counselling and wellness consulting website with service pages, therapist profiles, blogs, and contact flows.",
     longDescription:
-      "Nestwell is a modern web application built to manage and explore property/accommodation listings with a clean, responsive user experience. It supports browsing and filtering listings, viewing detailed property pages, and a structured inquiry/booking flow designed for real-world usability.",
+      "Nestwell is a clinician-led counselling and wellness consulting web platform designed to present services professionally and build trust with users. The site includes an About section with the organization’s promise and aspiration, a dedicated team/professionals area, blog content for community engagement, and clear contact pathways for inquiries and appointments. The UI follows a calm, minimal brand aesthetic with responsive layouts and structured content sections.",
     technologies: [
-      "Next.js",
-      "React.js",
+      "React.js / Next.js",
       "Tailwind CSS",
-      "Node.js",
-      "RESTful APIs",
-      "SQL / MongoDB"
+      "Framer Motion",
+      "RESTful APIs (optional)",
+      "Cloud Hosting"
     ],
     features: [
-      "Property listing grid with filters and search",
-      "Detailed listing pages with image sections and key details",
-      "Inquiry/booking-style flow with form validation",
-      "Admin-ready structure for managing listings",
-      "Mobile-friendly responsive UI"
+      "About page with brand story, promise, and aspiration sections",
+      "Therapy professionals/team profiles section",
+      "Blogs and community content sections",
+      "Contact and inquiry flow for clients",
+      "Clean, responsive UI aligned with brand styling"
     ],
     image: "/images/projects/nestwell/nestwell.png",
-    demoUrl: "",
-    githubUrl: "",
+    demoUrl: "", // add your link
+    githubUrl: "", // add your link
     category: "web"
-  },
+  }
+  ,
 
   {
     id: "dreamfit-lk",
@@ -62,37 +62,37 @@ export const projects: Project[] = [
       "Add-to-cart and complete checkout flow",
       "User-friendly UI for customization and shopping"
     ],
-    image: "/images/projects/dreamfit/dreamfit.png",
+    image: "/images/projects/Dreamfit/customizepage.png",
     demoUrl: "", // add your link
     githubUrl: "", // add your link
     category: "web"
   }
   ,
-  {
-    id: "ev-project",
-    title: "EV Project",
-    description: "Electric-vehicle focused system with data management and user-driven workflows.",
-    longDescription:
-      "An EV-focused application built to support practical user workflows such as exploring EV-related data, managing records, and presenting key information through a clean UI. The system is designed with a structured backend and database layer to handle scalable data operations and future feature expansion.",
-    technologies: [
-      "React.js / Next.js",
-      "Node.js / Express.js",
-      "Spring Boot",
-      "SQL (MySQL/PostgreSQL)",
-      "RESTful APIs"
-    ],
-    features: [
-      "Structured CRUD operations with validation",
-      "Database-backed records and history",
-      "Clean UI for viewing and managing entries",
-      "Role-ready design for admin/user separation",
-      "REST API architecture for easy integration"
-    ],
-    image: "/images/projects/ev/ev.png",
-    demoUrl: "",
-    githubUrl: "",
-    category: "web"
-  },
+  // {
+  //   id: "ev-project",
+  //   title: "EV Project",
+  //   description: "Electric-vehicle focused system with data management and user-driven workflows.",
+  //   longDescription:
+  //     "An EV-focused application built to support practical user workflows such as exploring EV-related data, managing records, and presenting key information through a clean UI. The system is designed with a structured backend and database layer to handle scalable data operations and future feature expansion.",
+  //   technologies: [
+  //     "React.js / Next.js",
+  //     "Node.js / Express.js",
+  //     "Spring Boot",
+  //     "SQL (MySQL/PostgreSQL)",
+  //     "RESTful APIs"
+  //   ],
+  //   features: [
+  //     "Structured CRUD operations with validation",
+  //     "Database-backed records and history",
+  //     "Clean UI for viewing and managing entries",
+  //     "Role-ready design for admin/user separation",
+  //     "REST API architecture for easy integration"
+  //   ],
+  //   image: "/images/projects/ev/ev.png",
+  //   demoUrl: "",
+  //   githubUrl: "",
+  //   category: "web"
+  // },
   {
     id: "helasuwa",
     title: "Helasuwa",

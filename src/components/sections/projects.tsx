@@ -59,7 +59,7 @@ export function Projects() {
             My <span className="gradient-text">Projects</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Showcasing my innovative solutions from streaming platforms to AI chatbots,
+            Showcasing my innovative solutions and developments,
            
           </p>
         </motion.div>

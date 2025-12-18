@@ -24,7 +24,7 @@ export function Contact() {
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
 
   // Use Formspree's official React hook
-  const [formspreeState, submitToFormspree] = useFormspree("xeoggvpd");
+  const [formspreeState, submitToFormspree] = useFormspree("xbdrrezj");
 
   const {
     register,
@@ -200,7 +200,7 @@ export function Contact() {
                   type="text"
                   id="subject"
                   className="w-full px-4 py-2 rounded-lg border bg-background focus:outline-none focus:ring-2 focus:ring-primary"
-                  placeholder="What&apos;s this about?"
+                  placeholder="Subject"
                 />
                 {errors.subject && (
                   <p className="mt-1 text-sm text-destructive">{errors.subject.message}</p>
@@ -217,7 +217,7 @@ export function Contact() {
                   id="message"
                   rows={5}
                   className="w-full px-4 py-2 rounded-lg border bg-background focus:outline-none focus:ring-2 focus:ring-primary resize-none"
-                  placeholder="Tell me about your project or idea..."
+                  placeholder="Message"
                 />
                 {errors.message && (
                   <p className="mt-1 text-sm text-destructive">{errors.message.message}</p>

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ANIMATION_VARIANTS } from "@/lib/constants";
 import { educationData } from "@/data/achievements";
@@ -29,16 +30,16 @@ export function About() {
           </motion.div>
         </ScrollReveal>
 
-        {/* Introduction */}
+        {/* Intro + Photo */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           variants={ANIMATION_VARIANTS.fadeUp}
           transition={{ delay: 0.2 }}
-          className="mb-16"
+          className="mb-12"
         >
-          <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div className="grid md:grid-cols-2 gap-10 items-center">
             {/* About Text */}
             <div className="space-y-4">
               <p className="text-lg leading-relaxed">
@@ -73,47 +74,79 @@ export function About() {
               </p>
             </div>
 
-            {/* Education Cards */}
-            <div className="space-y-4">
-              {educationData.map((edu, index) => (
-                <motion.div
-                  key={edu.id}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  variants={ANIMATION_VARIANTS.fadeUp}
-                  transition={{ delay: index * 0.1 }}
-                  className="p-6 rounded-lg border bg-card hover:shadow-lg transition-shadow"
-                >
-                  <div className="flex items-start space-x-4">
-                    <div className="p-3 rounded-full bg-primary/10 text-primary">
-                      <GraduationCap className="h-6 w-6" />
-                    </div>
+            {/* Profile Photo */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={ANIMATION_VARIANTS.fadeUp}
+              transition={{ delay: 0.15 }}
+              className="w-full"
+            >
+              <div className="relative w-full max-w-md mx-auto">
+                <div className="relative aspect-[4/4] overflow-hidden rounded-2xl border bg-card shadow-sm">
+                  <Image
+                    src="/images/profile/sachintha.jpg" 
+                    alt="Sachintha Waduge"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </div>
 
-                    <div className="flex-1">
-                      <h3 className="font-semibold text-lg">{edu.degree}</h3>
-                      <p className="text-primary font-medium">{edu.institution}</p>
-
-                      <div className="flex flex-wrap gap-4 mt-2 text-sm text-muted-foreground">
-                        <span className="flex items-center gap-1">
-                          <Calendar className="h-3 w-3" />
-                          {edu.duration}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <MapPin className="h-3 w-3" />
-                          {edu.location}
-                        </span>
-                      </div>
-
-                      {edu.gpa && (
-                        <p className="mt-2 text-sm font-medium">GPA: {edu.gpa}</p>
-                      )}
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+                {/* subtle accent */}
+                <div className="absolute -z-10 -bottom-4 -right-4 h-full w-full rounded-2xl bg-primary/10" />
+              </div>
+            </motion.div>
           </div>
+        </motion.div>
+
+        {/* Education Cards (below) */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={ANIMATION_VARIANTS.fadeUp}
+          transition={{ delay: 0.1 }}
+          className="space-y-4"
+        >
+          {educationData.map((edu, index) => (
+            <motion.div
+              key={edu.id}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={ANIMATION_VARIANTS.fadeUp}
+              transition={{ delay: index * 0.08 }}
+              className="p-6 rounded-lg border bg-card hover:shadow-lg transition-shadow"
+            >
+              <div className="flex items-start space-x-4">
+                <div className="p-3 rounded-full bg-primary/10 text-primary">
+                  <GraduationCap className="h-6 w-6" />
+                </div>
+
+                <div className="flex-1">
+                  <h3 className="font-semibold text-lg">{edu.degree}</h3>
+                  <p className="text-primary font-medium">{edu.institution}</p>
+
+                  <div className="flex flex-wrap gap-4 mt-2 text-sm text-muted-foreground">
+                    <span className="flex items-center gap-1">
+                      <Calendar className="h-3 w-3" />
+                      {edu.duration}
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <MapPin className="h-3 w-3" />
+                      {edu.location}
+                    </span>
+                  </div>
+
+                  {edu.gpa && (
+                    <p className="mt-2 text-sm font-medium">GPA: {edu.gpa}</p>
+                  )}
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
       </div>
     </section>

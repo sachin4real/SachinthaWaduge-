@@ -39,3 +39,4 @@ export const ANIMATION_VARIANTS = {
     visible: { opacity: 1, scale: 1 }
   }
 };
+
