@@ -62,7 +62,7 @@ export const projects: Project[] = [
       "Add-to-cart and complete checkout flow",
       "User-friendly UI for customization and shopping"
     ],
-    image: "/images/projects/Dreamfit/customizepage.png",
+    image: "/images/projects/dreamfit/customizepage.png",
     demoUrl: "", // add your link
     githubUrl: "", // add your link
     category: "web"
