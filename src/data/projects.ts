@@ -33,7 +33,7 @@ export const projects: Project[] = [
       "Contact and inquiry flow for clients",
       "Clean, responsive UI aligned with brand styling"
     ],
-    image: "/images/projects/nestwell/nestwell.png",
+    image: "/images/projects/Nestwell/NestWell.png",
     demoUrl: "", // add your link
     githubUrl: "", // add your link
     category: "web"
@@ -114,7 +114,7 @@ export const projects: Project[] = [
       "Backend-ready structure for records and management",
       "Clean component-based architecture"
     ],
-    image: "/images/projects/helasuwa/helasuwa.png",
+    image: "/images/projects/Helasuwa/Helasuwa.png",
     demoUrl: "",
     githubUrl: "",
     category: "web"
