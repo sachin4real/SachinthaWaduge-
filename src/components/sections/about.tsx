@@ -86,7 +86,7 @@ export function About() {
               <div className="relative w-full max-w-md mx-auto">
                 <div className="relative aspect-[4/4] overflow-hidden rounded-2xl border bg-card shadow-sm">
                   <Image
-                    src="/images/profile/sachintha.jpg" 
+                    src="/images/profile/sachintha.png" 
                     alt="Sachintha Waduge"
                     fill
                     className="object-cover"
